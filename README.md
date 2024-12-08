@@ -45,7 +45,6 @@ Finally, **kills**, **deaths**, and **assists** were not imputed, as they did no
 
 The distribution of the imputed columns before and after imputation follow.
 
-# TODO: Uncomment imputation iframes
 <iframe src="assets/imputed/damagemitigatedperminute.html" width="650" height="450" frameborder="0"></iframe>
 <iframe src="assets/imputed/damagetochampions.html" width="650" height="450" frameborder="0"></iframe>
 <iframe src="assets/imputed/damagetakenperminute.html" width="650" height="450" frameborder="0"></iframe>
