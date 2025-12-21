@@ -72,7 +72,7 @@ each of which always has one of each position! This is beneficial because we kno
 does not contain bias due to certain roles being more or less represented than each other.
 
 ## Bivariate Analysis
-Basic stastics for the game include kills, deaths, and assists. 
+Basic statistics for the game include kills, deaths, and assists. 
 One may wonder if these are distinct within positions, and we begin to explore that in the following plot.
 <iframe src="assets/position_vs_kills.html" width="650" height="450" frameborder="0"></iframe>
 Not only does each position seem to have a decently distinct distribution of kills, 
@@ -94,10 +94,10 @@ The following pivot table shows how different positions tend to be the first kil
 Looking at all of this data is interesting, but we wish to revisit our original question "**How do different roles act within the game?**" In order to do this, we will predict which role a player played given their post-game data. This is a multiclass classification problem, where we are classifying the match data into one of five possible roles (the response variable). We choose this response variable because the role is one of the most important aspects of League of Legends gameplay. We perform our classification on game data after games have finished, so we know all of the actions players have taken in their matches. We chose to use accuracy to evaluate our classifier because each role is the same "value" within the game, and therefore predicting incorrectly is equally costly.
 
 # Baseline Model
-We first start with a model that uses three quantitative features: **kills**, **deaths**, and **assists**. We chose a One vs One classifier that uses Logistic Regression, and we did not need to perform any encoding on the features. Unfortunately, this model does not perform very well. Performing an accuracy test with a train-test split, we see that the accuracy is around 37%.5%, which is hardly better than randomly guessing which role a player played.
+We first start with a model that uses three quantitative features: **kills**, **deaths**, and **assists**. We chose a One vs One classifier that uses Logistic Regression, and we did not need to perform any encoding on the features. Unfortunately, this model does not perform very well. Performing an accuracy test with a train-test split, we see that the accuracy is around 37.5%, which is hardly better than randomly guessing which role a player played.
 
 # Final Model
-For our final model, we chose to add in the **damagetochampions**, **damagetakenperminute**, **damagemitigatedperminute**, **wardsplaced**, **earnedgold**, **minionkills**, **monsterkills** variables and apply a Quantile Transform to each of them. Adding more features give more insight into the game itself and applying the Quantile Transformation helped fight against the skewed nature of those features. We also chose to apply the transformation to our original features so that all features would have the same scale, which prevents them from dominating each other. We performed a Cross Validation Grid Search with cross-fold size 5 which ended up choosing a quantile count of 1000. Our final model proves much better than our Baseline Model, with an accuracy score of around 80%. This means that it is nearly four times better than randomly guessing!
+For our final model, we chose to add in the **damagetochampions**, **damagetakenperminute**, **damagemitigatedperminute**, **wardsplaced**, **earnedgold**, **minionkills**, **monsterkills** variables and apply a Quantile Transform to each of them. Adding more features give more insight into the game itself and applying the Quantile Transformation helped fight against the skewed nature of those features. We also chose to apply the transformation to our original features so that all features would have the same scale, which prevents them from dominating each other. We performed a Cross Validation Grid Search with cross-fold size 5 which ended up choosing a quantile count of 1000. Our final model proves much better than our Baseline Model, with an accuracy score of ~80%. This means that it is nearly four times better than randomly guessing!
 
 # Contact
 Feel free to reach out!
