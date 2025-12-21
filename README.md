@@ -9,7 +9,7 @@ For those unfamiliar, League of Legends is a MOBA (Multiplayer Online Battle Are
 
 To motivate this exploration, we provide a question: **How do different roles act within the game?** 
 
-This question may seem simple on the surface, but the analysis of such data and relations may prove useful to both players and fans of professional play. If you're a player, what skills should you be focusing on in order to maximize your potential in your role? If your stats lead you to be classified as a different role, you may perform better in the game playing that role instead. For fans of professional apply, they can apply these same observations to their favorite players, and dive deep into how teams may agree or disagree with the statistics.
+This question may seem simple on the surface, but the analysis of such data and relations may prove useful to both players and fans of professional play. If you're a player, what skills should you be focusing on in order to maximize your potential in your role? If your stats lead you to be classified as a different role, you may perform better in the game playing that role instead. For fans of professional gaming, they can apply these same observations to their favorite players, and dive deep into how teams may agree or disagree with the statistics.
 
 ## Relevant Subset of the Data
 This dataset is vast, with 150181 rows (including the header), and 161 columns. We feel that not all of these columns are directly relevant (for example, team statistics will not affect individual players), so a subset was chosen for analysis:
@@ -31,7 +31,7 @@ This subset was selected as it represents many different parts of a match, but d
 # Data Cleaning and Exploratory Data Analysis
 ## Data Cleaning
 
-In order to perform analysis on this data, some cleaning was performed. First, rows with the **position** set as team were filtered out, as these were found to be matches with only partial data, and, importantly, did not contain data on individual players.
+In order to perform analysis on this data, some cleaning was performed. First, rows with the **position** set as **team** were filtered out, as these were found to be matches with only partial data, and, importantly, did not contain data on individual players.
 
 Then, mean imputation was performed on **damagemitigatedperminute**. Mean imputation was chosen as there is a lot of valid data in the dataset, and the reason why there is also a lot of missing data for these columns is not known and does not appear to depend on other columns.
 
